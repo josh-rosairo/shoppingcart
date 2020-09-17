@@ -6,7 +6,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import {Product} from "../constants";
 import {Component} from "react";
-import { products } from '../constants/index';
 
 interface MyProps {
     products: [Product]
@@ -22,21 +21,23 @@ interface MyState {
  * Product Display, will display all the products available for 'purchase'
  * Users will be able to add any quantity of these products to their cart
  * **/
-const ProductDisplay = () =>{
+class ProductDisplay extends Component<MyProps, MyState>  {
 
-    const classes = useStyles();
+    //%TODO const classes = useStyles();
 
-    return (
-        <div className={classes.root}>
-            <List component="nav" aria-label="main mailbox folders">
-                {products.map((item,i)=>(
-                    <ListItem button key={i}>
-                        <ListItemText primary={`Item: ${item.name} ---- Price: $${item.price}`} />
-                    </ListItem>
-                ))}
-            </List>
-        </div>
-    )
+    render() {
+        return (
+            <div>
+                <List component="nav" aria-label="main mailbox folders">
+                    {this.props.products.map((item, i) => (
+                        <ListItem button key={i}>
+                            <ListItemText primary={`Item: ${item.name} ---- Price: $${item.price}`}/>
+                        </ListItem>
+                    ))}
+                </List>
+            </div>
+        )
+    }
 }
 
 
