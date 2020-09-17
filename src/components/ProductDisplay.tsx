@@ -6,6 +6,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import {Product} from "../constants";
 import {Component} from "react";
+import {addToCart} from "./actions/shoppingCartActions";
 
 interface MyProps {
     products: [Product]
@@ -24,8 +25,8 @@ interface MyState {
 class ProductDisplay extends Component<MyProps, MyState>  {
 
     //%TODO const classes = useStyles();
-    handleClick = (item)=>{
-        this.props.addToCart(item);
+    handleClick = (item: Product)=>{
+        //this.props.addToCart(item);
     }
 
 
@@ -66,9 +67,9 @@ const mapStateToProps = (state:MyState)=>{
 }
 
 // %TODO REDUCER
-const mapDispatchToProps= (dispatch)=>{
+const mapDispatchToProps= (dispatch: any)=>{
     return{
-        addToCart: (item)=>{dispatch(addToCart(item))}
+        addToCart: (item: Product)=>{dispatch(addToCart(item))}
     }
 }
 
