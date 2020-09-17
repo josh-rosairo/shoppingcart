@@ -20,3 +20,7 @@ export const products = [
     price: 19.45
   }
 ];
+export interface Product {
+  name: string,
+  price: number
+}

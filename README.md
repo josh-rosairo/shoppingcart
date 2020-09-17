@@ -4,6 +4,8 @@ npm ci && npm install
 
 npm install @material-ui/core
 
+npm install --save @types/react-redux
+
 ---
 
 ## Test Instructions

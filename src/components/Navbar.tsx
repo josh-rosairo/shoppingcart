@@ -21,7 +21,10 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-
+/**
+ * Navigation bar
+ * @constructor
+ */
 const Navbar = () =>{
     const classes = useStyles();
     // nav bar component information using material-ui.
