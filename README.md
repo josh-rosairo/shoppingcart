@@ -1,6 +1,8 @@
 # Unicorn Vet Group Front End Template 🦄🚀
 
-< add documentation here >
+npm ci && npm install
+
+npm install @material-ui/core
 
 ---
 
