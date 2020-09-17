@@ -1,10 +1,17 @@
 # Unicorn Vet Group Front End Template 🦄🚀
 
+Was developed using Webstorm, node modules folder is included so installation should be simply running the following in 
+terminal workspace:
+```
 npm ci && npm install
+```
+Developed using:
 
-npm install @material-ui/core
+    npm version: 12.18.4
+    npx version 6.14.5
 
-npm install --save @types/react-redux
+
+
 
 ---
 
