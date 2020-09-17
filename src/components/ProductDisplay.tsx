@@ -24,13 +24,17 @@ interface MyState {
 class ProductDisplay extends Component<MyProps, MyState>  {
 
     //%TODO const classes = useStyles();
+    handleClick = (item)=>{
+        this.props.addToCart(item);
+    }
+
 
     render() {
         return (
             <div>
-                <List component="nav" aria-label="main mailbox folders">
+                <List component="nav">
                     {this.props.products.map((item, i) => (
-                        <ListItem button key={i}>
+                        <ListItem button key={i} onClick={()=>{this.handleClick(item)}}>
                             <ListItemText primary={`Item: ${item.name} ---- Price: $${item.price}`}/>
                         </ListItem>
                     ))}
@@ -60,5 +64,13 @@ const mapStateToProps = (state:MyState)=>{
         products: state.products
     }
 }
+
 // %TODO REDUCER
+const mapDispatchToProps= (dispatch)=>{
+    return{
+        addToCart: (item)=>{dispatch(addToCart(item))}
+    }
+}
+
+
 export default connect(mapStateToProps)(ProductDisplay)
